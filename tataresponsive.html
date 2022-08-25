@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        *{
+    margin: 0;
+   padding: 0;
+    box-sizing: border-box;
+    }
+   body{
+        background-color: black;
+       width:100%;
+       font-family: Lato, Helvetica, sans-serif;
+       
+    }
+    a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color:Black;
+ color: #fff;
+ overflow:hidden;
+ position:fixed;
+ width:100%;
+ top:0;
+ z-index:99;
+ 
+}
+.nav-links a {
+ color: #fff;
+}
+/* LOGO */
+.logo {
+ font-size: 32px;
+}
+/* NAVBAR MENU */
+.menu {
+ display: flex;
+ gap: 1em;
+ font-size: 18px;
+}
+.menu li:hover {
+ background-color: #4c9e9e;
+ border-radius: 5px;
+ transition: 0.3s ease;
+ list-style:none;
+  text-decoration: none;
+}
+.menu li {
+ padding: 5px 14px;
+}
+/* DROPDOWN MENU */
+.services {
+ position: relative; 
+}
+.dropdown {
+ background-color: rgb(1, 139, 139);
+ padding: 1em 0;
+ position: absolute; /*WITH RESPECT TO PARENT*/
+ display: none;
+ border-radius: 8px;
+ top: 35px;
+}
+.dropdown li + li {
+ margin-top: 10px;
+}
+.dropdown li {
+ padding: 0.5em 1em;
+ width: 8em;
+ text-align: center;
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+.services:hover .dropdown {
+ display: block;
+}
+input[type=checkbox]{
+ display: none;
+} 
+/*HAMBURGER MENU*/
+.hamburger {
+ display: none;
+ font-size: 24px;
+ user-select: none;
+}
+/* APPLYING MEDIA QUERIES
+@media (max-width: 768px) {
+  a {
+ text-decoration: none;
+}
+li {
+ list-style: none;
+}
+.menu { 
+ display:none;
+ position:fixed;
+ background-color:black;
+ right: 0;
+ left: 0;
+ 
+ height:100%;
+ text-align: center;
+ 
+}
+.menu li:hover {
+ display: inline-block;
+ background-color:#4c9e9e;
+ transition: 0.3s ease;
+}
+.menu li + li {
+ margin-top: 12px;
+}
+input[type=checkbox]:checked ~ .menu{
+ display: block;
+}
+.hamburger {
+ display: block;
+}
+.dropdown {
+ left: 50%;
+ top: 30px;
+ transform: translateX(35%);
+}
+.dropdown li:hover {
+ background-color: #4c9e9e;
+}
+} */
+
+.image{
+    margin-left:45%;
+    margin-top:15%;
+    height:120px;
+    width:120px;
+
+}
+h3{
+    color:white;
+    margin-left:50%;
+    font-size:30px;
+}
+
+.caption{
+   
+  color:white;
+  cursor: context-menu;
+}
+h1{
+  font-size:50px;
+  margin-top:100px;
+  margin-left:80px;
+}
+p{
+  font-size:26px;
+  margin-left:80px;
+}
+.caption1{
+   
+   color:white;
+   cursor: context-menu;
+ }
+  h2{
+   font-size:50px;
+   margin-top:50px;
+   margin-left:80px;
+ }
+ p{
+   font-size:26px;
+   margin-left:80px;
+ }
+ .caption2{
+   margin-top:70px;
+   color:white;
+   cursor: context-menu;
+ }
+  h2{
+   font-size:50px;
+   margin-top:50px;
+   margin-left:80px;
+ }
+ .video{
+    margin-left:200px;
+    border-radius:5px solid white;
+    margin-top:30px;
+    cursor: context-menu;
+ }
+ .row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-top:100px;
+ 
+}
+.column2 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  max-width: 40%;
+  padding: 0 4px;
+ 
+  padding-left:150px;
+  
+  
+ 
+}
+.column3 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+  max-width: 50%;
+  padding:4px;
+ 
+  
+ 
+}
+.video-mask{
+    width: 900px;
+    border-radius: 20px; 
+    overflow: hidden;
+    margin-left:200px;
+    margin-top:40px;
+    
+}
+.img__wrap5 {
+  position: relative;
+  height: 405px;
+  width: 100%;
+}
+
+.img__description5 {
+  position:absolute;
+  top:px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  width:100%;
+  height:400px;
+transition: opacity .2s, visibility .2s;
+}
+.img__wrap5:hover .img__description5  {
+  visibility: visible;
+  opacity: 0.7;
+}
+.img__wrap6 {
+  position: relative;
+  height: 400px;
+  width: 100%;;
+}
+.img__description6 {
+  position:absolute;
+  top:px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  width:100%;
+  height:400px;
+transition: opacity .2s, visibility .2s;
+}
+.img__wrap6:hover .img__description6  {
+  visibility: visible;
+  opacity: 0.7;
+}
+.img__wrap7 {
+  position: relative;
+  height: 200px;
+  width: 96%;;
+}
+.img__description7 {
+  position:absolute;
+  top:px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  width:100%;
+  height:200px;
+transition: opacity .2s, visibility .2s;
+}
+.img__wrap7:hover .img__description7  {
+  visibility: visible;
+  opacity: 0.7;
+}
+.img__wrap8 {
+  position: relative;
+  height: 200px;
+  width: 96%;
+}
+.img__description8 {
+  position:absolute;
+  top:px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  width:100%;
+  height:200px;
+transition: opacity .2s, visibility .2s;
+}
+.img__wrap8:hover .img__description8  {
+  visibility: visible;
+  opacity: 0.7;
+}
+.img__wrap9 {
+  position: relative;
+  height: 397px;
+  width: 100%;;
+}
+.img__description9 {
+  position:absolute;
+  top:5px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  width:98%;
+  height:397px;
+transition: opacity .2s, visibility .2s;
+}
+.img__wrap9:hover .img__description9  {
+  visibility: visible;
+  opacity: 0.7;
+}
+@media (min-width:1900px){
+    .image{
+        margin-left: 650px;
+        
+    }
+    /* .menu{
+      font-size: 30px;
+    } */
+  
+    .img__wrap5{
+        width:500px;
+        position: relative;
+        margin-left: 100px;
+    }
+    .img__wrap6{
+        width:500px;
+        position: relative;
+        margin-left: 100px;
+    }
+    .img__wrap7{
+        width:700px;
+        position: relative;
+        margin-right: 200px;
+    }
+    .img__wrap8{
+        width:700px;
+        position: relative;
+        margin-right: 200px;
+    }
+    .img__wrap9{
+        width:730px;
+        position: relative;
+        margin-right: 200px;
+    }
+    /* .row{
+margin-left: -100px;
+    } */
+    .column2{
+        margin-left: -100px;
+    }
+
+}
+@media screen and (max-width:1200px) and (min-width:768px){
+  .image{
+    margin-left: 400px;
+    margin-top: 250px;
+  }
+  .video-mask{
+   margin-left: 50px;
+   width: 800px;
+  }
+    
+}
+@media(min-width:768px)
+ {
+  .video-mask{
+    margin-left: 100px;
+    width: 600px;
+    height: 300px;
+  }
+  .image{
+    margin-left: 350px;
+  }
+ }
+@media(min-width:1000px)
+ {
+  .video-mask{
+    margin-left: 100px;
+    width: 800px;
+    height: 400px;
+  }
+  .image{
+    margin-left: 450px;
+  }
+ }
+@media(min-width:1200px)
+ {
+  .video-mask{
+    margin-left: 100px;
+    width: 1000px;
+    height: 400px;
+  }
+  .image{
+    margin-left:550px;
+  }
+ }
+ @media screen and (max-width:1900px) and (min-width:1500px){
+
+  .image{
+    margin-left: 900px;
+  } 
+  .caption{
+    width:1900px;
+  }
+  .caption1{
+    width:1900px;
+  }
+  /* .menu{
+    font-size: 30px;
+  } */
+  .caption p{
+      font-size: 35px;
+    }
+  .caption1 p{
+      font-size: 35px;
+    }
+    .video-mask{
+      margin-left: 400px;
+      height: 500px;
+      width: 1200px;
+    }
+    /* .row{
+      margin-left: 200px;
+    } */
+  }
+  @media screen and (max-width:1500px) and (min-width:1200px){
+    .image{
+      margin-left: 600px;
+    }
+  }
+  @media screen and (max-width:920px) and (min-width:768px)
+{
+.img__description5 h2{
+  margin-left: 10px;
+}
+.img__description6 h2{
+  margin-left: 10px;
+}
+}
+@media screen and (max-width:1900px) and (min-width:1200px){
+    .menu{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:1200px) and (min-width:750px){
+    .menu{
+        font-size: 20px;
+    }
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.containers {
+        /* background-color: grey; */
+        padding-top: 80px;
+        /* padding-left: 20px; */
+    }
+
+    .card-container {
+        padding-left: 200px;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px 0px;
+    }
+
+    .card1 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+
+
+    }
+
+    .card2 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card3 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card4 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card5 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card6 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card7 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card8 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card9 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    .card10 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+    .card11 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+    .card12 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+    .card13 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+    .card14 {
+        height: 400px;
+        width: 350px;
+        background-color: black;
+        margin: 20px 20px;
+    }
+
+    /* ///for images//////////// */
+    .img-wrp1 {
+        height: 400px;
+        width: 350px;
+    }
+
+    .img-description {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper:hover .img-description {
+        visibility: visible;
+        opacity: 0.7;
+    }
+
+    .img-wrp2 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description2 {
+    position: relative;
+    top: -403px;
+
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper2:hover .img-description2 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp3 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description3 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper3:hover .img-description3 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp4 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description4 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper4:hover .img-description4 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp5 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description5 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper5:hover .img-description5 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp6 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description6 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper6:hover .img-description6 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp7 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description7 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper7:hover .img-description7 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp8 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description8 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper8:hover .img-description8 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp9 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description9 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper9:hover .img-description9 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp10 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description10 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper10:hover .img-description10 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp11 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description11 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper11:hover .img-description11 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp12 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description12 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper12:hover .img-description12 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp13 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description13 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper13:hover .img-description13 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+    .img-wrp14 {
+        height: 400px;
+        width: 350px;
+    }
+    .img-description14 {
+        position: relative;
+        top: -403px;
+        background: black;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        height: 400px;
+        width: 350px;
+        cursor: pointer;
+        transition: opacity .2s, visibility .2s;
+    }
+
+    .img-wrapper14:hover .img-description14 {
+        visibility: visible;
+        opacity: 0.7;
+    }
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+@media screen and  (max-width:1900px){
+   
+   .card1{
+    margin-left: 415px;
+   }
+   .card3{
+    margin-left: 415px;
+   }
+   .card5{
+    margin-left: 415px;
+   }
+   .card7{
+    margin-left: 415px;
+   }
+   .card9{
+    margin-left: 415px;
+   }
+   .card9{
+    margin-left: 415px;
+   }
+   .card11{
+    margin-left: 415px;
+   }
+   
+  
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+@media screen and  (max-width:1500px){
+    
+   .card1{
+    margin-left: 255px;
+   }
+   .card3{
+    margin-left: 255px;
+   }
+   .card5{
+    margin-left: 255px;
+   }
+   .card7{
+    margin-left: 255px;
+   }
+   .card9{
+    margin-left: 255px;
+   }
+   .card9{
+    margin-left: 255px;
+   }
+   .card11{
+    margin-left: 255px;
+   }
+   
+  
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+@media screen and  (max-width:1400px){
+    
+   .card1{
+    margin-left: 185px;
+   }
+   .card3{
+    margin-left: 185px;
+   }
+   .card5{
+    margin-left: 185px;
+   }
+   .card7{
+    margin-left: 185px;
+   }
+   .card9{
+    margin-left: 185px;
+   }
+   .card9{
+    margin-left: 185px;
+   }
+   .card11{
+    margin-left: 185px;
+   }
+   
+  
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+@media screen and  (max-width:1024px){
+   
+   .card1{
+    margin-left: -15px;
+   }
+   .card3{
+    margin-left: -15px;
+   }
+   .card5{
+    margin-left: -15px;
+   }
+   .card7{
+    margin-left: -15px;
+   }
+   .card9{
+    margin-left: -15px;
+   }
+   .card9{
+    margin-left: -15px;
+   }
+   .card11{
+    margin-left: -15px;
+   }
+   
+  
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////// */
+@media screen and  (max-width:768px){
+    
+   .card1{
+    margin-left: -180px;
+    width: 300px;
+    padding-right: 50px;
+   }
+   .card2{
+    margin-left: 50px;
+    width: 300px;
+   }
+   .card3{
+    margin-left: -180px;
+    width: 300px;
+    padding-right: 50px;
+   }
+   .card4{
+    margin-left: 50px;
+    width: 300px;
+   }
+   .card5{
+    margin-left: -180px;
+    width: 300px;
+    padding-right: 50px;
+   }
+   .card6{
+    margin-left: 50px;
+    width: 300px;
+   }
+   .card7{
+    margin-left: -180px;
+    width: 300px;
+    padding-right: 50px;
+   }
+   .card8{
+    margin-left: 50px;
+    width: 300px;
+   }
+   .card9{
+    margin-left: -180px;
+    width: 300px;
+    padding-right: 50px;
+   }
+   .card10{
+    margin-left: 50px;
+    width: 300px;
+   }
+   .card11{
+    margin-left: -180px;
+    width: 300px;
+    padding-right: 50px;
+   }
+   .card12{
+    margin-left: 50px;
+    width: 300px;
+   }
+  
+  
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+</style>
+<body>
+    
+<div class="main"> 
+<nav class="navbar">
+     <!-- LOGO -->
+     <div class="logo"><a href="index (2).php"> <img style="cursor: context-menu;" class="img"src="new images/logo.png"></a></div>
+     <!-- NAVIGATION MENU -->
+     <ul class="nav-links">
+       <!-- USING CHECKBOX HACK -->
+       <input type="checkbox" id="checkbox_toggle" />
+       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+       <!-- NAVIGATION MENUS -->
+       <div class="menu">
+         <li><a href="/">Service</a></li>
+         <li><a href="Work.php">Work</a></li>
+         <li class="services">
+           <a href="/">Blog</a>
+           <!-- DROPDOWN MENU -->
+           <ul class="dropdown">
+            </ul>
+         </li>
+         <li><a href="Aboutus.php">About Us</a></li>
+         <li><a href="ContactUs.php">Contact Us</a></li>
+       </div>
+     </ul>
+</div>
+<div class="portfolio">
+<img  class="image"src="new images/Tata.png">
+
+</div>
+<div class="caption">
+							<h1>Heading</h1>
+							<p>ExperientialEtc is a 360 degree activation agency which is disrupting the way traditional activations have been done 
+                             by integrating latest, cutting edge & futuristic technology in its most simplest form to create jaw dropping experiences.</p>
+</div>
+<div class="caption1">
+					<h2>Heading2</h2>
+                    <p>ExperientialEtc is a 360 degree activation agency which is disrupting the way traditional activations have been done <br><br>
+                             by integrating latest, cutting edge & futuristic technology in its most simplest form to create jaw dropping experiences.</p>
+                             <p>ExperientialEtc is a 360 degree activation agency which is disrupting the way traditional activations have been done <br><br>
+                             by integrating latest, cutting edge & futuristic technology in its most simplest form to create jaw dropping<br> experiences.</p>
+                             <p>ExperientialEtc is a 360 degree activation agency which is disrupting the way traditional activations have been done <br><br>
+                             by integrating latest, cutting edge & futuristic technology in its most simplest form to create jaw dropping<br> experiences.</p>
+                             <p>ExperientialEtc is a 360 degree activation agency which is disrupting the way traditional activations have been done <br><br>
+                             by integrating latest, cutting edge & futuristic technology in its most simplest form to create jaw dropping<br> experiences.</p>
+</div> 
+<div class="caption2">
+					<h2>Video</h2>
+</div>
+<div class="video-mask">
+    <video  width="900" height="400" controls="false" autoplay>
+  <source src="movie.mp4" type="video/mp4">  </video>
+</div>
+              
+
+<div class="caption2">
+					<h2>Other Project</h2> 
+</div>
+<div class="containers">
+  <div class="card-container">
+      <div class="cards">
+          <div class="card1">
+              <div class="img-wrapper">
+                  <img class="img-wrp1" src="./new images/img1.jpeg" alt="">
+                  <div class="img-description">
+                      <center>
+                          <ul class="text">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card2">
+              <div class="img-wrapper2">
+                  <img class="img-wrp2" src="./new images/img2.jpeg" alt="">
+                  <div class="img-description2">
+                      <center>
+                          <ul class="text2">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card3">
+              <div class="img-wrapper3">
+                  <img class="img-wrp3" src="./new images/img3.jpeg" alt="">
+                  <div class="img-description3">
+                      <center>
+                          <ul class="text3">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card4">
+              <div class="img-wrapper4">
+                  <img class="img-wrp4" src="./new images/img4.webp" alt="">
+                  <div class="img-description4">
+                      <center>
+                          <ul class="text4">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card5">
+              <div class="img-wrapper5">
+                  <img class="img-wrp5" src="./new images/img1.jpeg" alt="">
+                  <div class="img-description5">
+                      <center>
+                          <ul class="text5">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card6">
+              <div class="img-wrapper6">
+                  <img class="img-wrp6" src="./new images/img2.jpeg" alt="">
+                  <div class="img-description6">
+                      <center>
+                          <ul class="text6">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card7">
+              <div class="img-wrapper7">
+                  <img class="img-wrp7" src="./new images/img3.jpeg" alt="">
+                  <div class="img-description7">
+                      <center>
+                          <ul class="text7">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card8"> <div class="img-wrapper8">
+              <img class="img-wrp8" src="./new images/img4.webp" alt="">
+              <div class="img-description8">
+                  <center>
+                      <ul class="text8">
+                          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                      </ul>
+                  </center>
+              </div>
+          </div></div>
+          <div class="card9">
+              <div class="img-wrapper9">
+                  <img class="img-wrp9" src="./new images/img1.jpeg" alt="">
+                  <div class="img-description9">
+                      <center>
+                          <ul class="text9">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card10">
+              <div class="img-wrapper10">
+                  <img class="img-wrp10" src="./new images/img2.jpeg" alt="">
+                  <div class="img-description10">
+                      <center>
+                          <ul class="text10">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card11">
+              <div class="img-wrapper11">
+                  <img class="img-wrp11" src="./new images/img3.jpeg" alt="">
+                  <div class="img-description11">
+                      <center>
+                          <ul class="text11">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card12">
+              <div class="img-wrapper12">
+                  <img class="img-wrp12" src="./new images/img4.webp" alt="">
+                  <div class="img-description12">
+                      <center>
+                          <ul class="text12">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="card13">
+              <div class="img-wrapper13">
+                  <img class="img-wrp13" src="./new images/img1.jpeg" alt="">
+                  <div class="img-description13">
+                      <center>
+                          <ul class="text13">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div>
+          </div>
+          <div class="card14">
+              <div class="img-wrapper14">
+                  <img class="img-wrp14" src="./new images/img1.jpeg" alt="">
+                  <div class="img-description14">
+                      <center>
+                          <ul class="text14">
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit!</li>
+                          </ul>
+                      </center>
+                  </div>
+              </div> -->
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+        
+</body>
+</html>
